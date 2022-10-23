@@ -46,12 +46,14 @@
      <Compile Include="Assets/DepthColliderDemo/Scripts/DepthImageViewer.cs" />
      <Compile Include="Assets/KinectScripts/Samples/FollowUserRotation.cs" />
      <Compile Include="Assets/KinectScripts/KinectWrapper.cs" />
+     <Compile Include="Assets/Game/Scripts/ModelBehaviour.cs" />
      <Compile Include="Assets/KinectScripts/Samples/SimpleGestureListener.cs" />
      <Compile Include="Assets/GesturesDemo/Scripts/PresentationScript.cs" />
      <Compile Include="Assets/GesturesDemo/Scripts/GestureListener.cs" />
      <Compile Include="Assets/OverlayDemo/Scripts/KinectOverlayer.cs" />
      <Compile Include="Assets/KinectScripts/Filters/TimedLerp.cs" />
      <Compile Include="Assets/KinectScripts/Filters/KinectHelper.cs" />
+     <Compile Include="Assets/Game/Scripts/VideoControllerScript.cs" />
      <Compile Include="Assets/KinectScripts/Samples/SetSceneAvatars.cs" />
      <Compile Include="Assets/DepthColliderDemo/Scripts/EggSpawner.cs" />
      <Compile Include="Assets/KinectScripts/Filters/JointPositionsFilter.cs" />
@@ -67,7 +69,6 @@
      <Compile Include="Assets/KinectScripts/Filters/BoneOrientationsConstraint.cs" />
      <Compile Include="Assets/KinectScripts/Filters/SelfIntersectionConstraint.cs" />
      <Compile Include="Assets/KinectScripts/AvatarController.cs" />
-     <Compile Include="Assets/Game/Scripts/VideoControllerScript.cs" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.5f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
@@ -310,6 +311,9 @@
      </Reference>
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.5f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTween">
+     <HintPath>/Users/cemhaspolat/Development/kiz-basina--simulation/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
      <HintPath>/Users/cemhaspolat/Development/kiz-basina--simulation/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
@@ -778,6 +782,10 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="DOTween.Modules.csproj">
+      <Project>{662bbc75-dd4d-f4f6-be0d-8e2ff2d0e434}</Project>
+      <Name>DOTween.Modules</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
