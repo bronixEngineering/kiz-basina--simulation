@@ -16,7 +16,7 @@ public class ModelBehaviour : MonoBehaviour
         transform.DOScale(Vector3.one, 3f);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
