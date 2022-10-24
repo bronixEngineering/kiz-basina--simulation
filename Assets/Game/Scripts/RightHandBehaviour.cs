@@ -9,6 +9,10 @@ namespace Game.Scripts
         [SerializeField] private ModelBehaviour _modelBehaviour;
 
         public event Action StartButtonInteracted;
+        public event Action Name1ButtonInteracted;
+        public event Action Name2ButtonInteracted;
+        public event Action Name3ButtonInteracted;
+        public event Action Name4ButtonInteracted;
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("StartButton"))
@@ -17,19 +21,24 @@ namespace Game.Scripts
                 StartButtonInteracted?.Invoke();
             }
             
-            if (other.CompareTag("StartButton"))
+            if (other.CompareTag("Name1"))
             {
-                _modelBehaviour.StartButtonInteracted();
+                Name1ButtonInteracted?.Invoke();
             }
             
-            if (other.CompareTag("StartButton"))
+            if (other.CompareTag("Name2"))
             {
-                _modelBehaviour.StartButtonInteracted();
+                Name2ButtonInteracted?.Invoke();
             }
             
-            if (other.CompareTag("StartButton"))
+            if (other.CompareTag("Name3"))
             {
-                _modelBehaviour.StartButtonInteracted();
+                Name3ButtonInteracted?.Invoke();            
+            }
+            
+            if (other.CompareTag("Name4"))
+            {
+                Name4ButtonInteracted?.Invoke();            
             }
         }
     }

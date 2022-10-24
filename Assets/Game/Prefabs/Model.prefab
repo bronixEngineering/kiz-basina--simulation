@@ -618,7 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _modelMesh: {fileID: 3293312797499050005}
-  _handMesh: {fileID: 7141257803063374562}
+  _firstHandMesh: {fileID: 7141257803063374562}
 --- !u!1 &8004931240982333547
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,15 +897,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01199631db1144b778432461bdbf3e86, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.6137929
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01199631db1144b778432461bdbf3e86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5811476
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01199631db1144b778432461bdbf3e86, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.120639086
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01199631db1144b778432461bdbf3e86, type: 3}
       propertyPath: m_LocalRotation.w

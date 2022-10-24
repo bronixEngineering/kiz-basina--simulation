@@ -16,6 +16,7 @@ public class ModelBehaviour : MonoBehaviour
     {
         transform.DOScale(Vector3.zero, 0.1f).OnComplete(() =>
         {
+            _modelMesh.enabled = true;
             _modelMesh.shadowCastingMode = ShadowCastingMode.On;
             transform.DOScale(Vector3.one, 4f).SetEase(Ease.Linear);
         });

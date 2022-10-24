@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - StartButton
+  - Name1
+  - Name2
+  - Name3
+  - Name4
   layers:
   - Default
   - TransparentFX
