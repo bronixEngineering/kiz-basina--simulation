@@ -17,10 +17,7 @@ namespace Game.Scripts
         private void Awake()
         {
             _rightHand.StartButtonInteracted += OnStartButtonInteracted;
-            _rightHand.Name1ButtonInteracted += OnName1ButtonActivated;
-            _rightHand.Name2ButtonInteracted += OnName2ButtonActivated;
-            _rightHand.Name3ButtonInteracted += OnName3ButtonActivated;
-            _rightHand.Name4ButtonInteracted += OnName4ButtonActivated;
+            _rightHand.NameButtonInteracted += OnNameButtonActivated;
         }
 
         private void OnStartButtonInteracted()
@@ -30,32 +27,29 @@ namespace Game.Scripts
             _textManager.StartTyping("İsmin ne?",_mainText, 0.1f);
         }
 
-        private void OnName1ButtonActivated()
+        private void OnNameButtonActivated(string name)
         {
             _textManager.TextCompleted += OnTextCompleted;
             NameButtonActivate(false);
-            _textManager.StartTyping("“Bursa’nın Nilüfer ilçesinde, icra memuru bir baba ve öğretmen bir annenin ilk kız çocuğu olarak dünyaya geldin. Annen ismin Selin olsun istedi, baban Sena olacak dedi. Kulağına 3 kez fısıldadılar.”“Hayatın, bir hastane odasının ufak küvezinde başladı.”", _mainText, 0.05f);
-        }
-        
-        private void OnName2ButtonActivated()
-        {
-            _textManager.TextCompleted += OnTextCompleted;
-            NameButtonActivate(false);
-            _textManager.StartTyping("“Malatya’nın Hanımağa köyünde, çiftçi bir baba ve ev hanımı bir annenin üçüncü kız çocuğu olarak dünyaya geldin. “Bir daha kız evladın olmaz, Döndü koy, adettendir” dedi deden. Kulağına 3 kez fısıldadılar.”“Hayatın, bir köy evi odasında, ağlama sesleri ve hayal kırıklıkları ile başladı.”", _mainText, 0.05f);
-        }
-        
-        private void OnName3ButtonActivated()
-        {
-            _textManager.TextCompleted += OnTextCompleted;
-            NameButtonActivate(false);
-            _textManager.StartTyping("Diyarbakır Silvan’ın Akçayır köyünde, hayvancılıkla uğraşan bir baba ve ev hanımı bir annenin ilk kız çocuğu olarak dünyaya geldin. İsmini abin koydu. Kulağına 3 kez fısıldadılar.”“Hayatın, bir köy evinin odasında, abinin kucağında başladı.”", _mainText, 0.05f);
-        }
-        
-        private void OnName4ButtonActivated()
-        {
-            _textManager.TextCompleted += OnTextCompleted;
-            NameButtonActivate(false);
-            _textManager.StartTyping("“Ankara’nın Çankaya ilçesinde, devlet memuru bir baba ve öğretmen bir annenin ilk kız çocuğu olarak dünyaya geldin. Annen ismini Özgür koymak istedi, özgür olsun, bahtı açık olsun dedi. Kulağına 3 kez fısıldadılar.”“Hayatın, bir hastane odasında, annenin kucağında başladı.”", _mainText, 0.05f);
+            if (name == "Name1")
+            {
+                _textManager.StartTyping("“Bursa’nın Nilüfer ilçesinde, icra memuru bir baba ve öğretmen bir annenin ilk kız çocuğu olarak dünyaya geldin. Annen ismin Selin olsun istedi, baban Sena olacak dedi. Kulağına 3 kez fısıldadılar.”“Hayatın, bir hastane odasının ufak küvezinde başladı.”", _mainText, 0.05f);
+            }
+            else if (name == "Name2")
+            {
+                _textManager.StartTyping("“Malatya’nın Hanımağa köyünde, çiftçi bir baba ve ev hanımı bir annenin üçüncü kız çocuğu olarak dünyaya geldin. “Bir daha kız evladın olmaz, Döndü koy, adettendir” dedi deden. Kulağına 3 kez fısıldadılar.”“Hayatın, bir köy evi odasında, ağlama sesleri ve hayal kırıklıkları ile başladı.”", _mainText, 0.05f);
+
+            }
+            else if (name == "Name3")
+            {
+                _textManager.StartTyping("Diyarbakır Silvan’ın Akçayır köyünde, hayvancılıkla uğraşan bir baba ve ev hanımı bir annenin ilk kız çocuğu olarak dünyaya geldin. İsmini abin koydu. Kulağına 3 kez fısıldadılar.”“Hayatın, bir köy evinin odasında, abinin kucağında başladı.”", _mainText, 0.05f);
+
+            }
+            else if (name == "Name4")
+            {
+                _textManager.StartTyping("“Ankara’nın Çankaya ilçesinde, devlet memuru bir baba ve öğretmen bir annenin ilk kız çocuğu olarak dünyaya geldin. Annen ismini Özgür koymak istedi, özgür olsun, bahtı açık olsun dedi. Kulağına 3 kez fısıldadılar.”“Hayatın, bir hastane odasında, annenin kucağında başladı.”", _mainText, 0.05f);
+
+            }
         }
 
         private void OnTextCompleted()
@@ -99,10 +93,8 @@ namespace Game.Scripts
         private void OnDestroy()
         {
             _rightHand.StartButtonInteracted -= OnStartButtonInteracted;
-            _rightHand.Name1ButtonInteracted -= OnName1ButtonActivated;
-            _rightHand.Name2ButtonInteracted -= OnName2ButtonActivated;
-            _rightHand.Name3ButtonInteracted -= OnName3ButtonActivated;
-            _rightHand.Name4ButtonInteracted -= OnName4ButtonActivated;
+            _rightHand.NameButtonInteracted -= OnNameButtonActivated;
+           
         }
     }
     
