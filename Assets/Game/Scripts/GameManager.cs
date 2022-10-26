@@ -34,39 +34,45 @@ namespace Game.Scripts
         private void OnName1ButtonActivated()
         {
             NameButtonActivate(false);
-            _textManager.StartTyping("Sena", _mainText);
+            _textManager.StartTyping("“Bursa’nın Nilüfer ilçesinde, icra memuru bir baba ve öğretmen bir annenin ilk kız çocuğu olarak dünyaya geldin. Annen ismin Selin olsun istedi, baban Sena olacak dedi. Kulağına 3 kez fısıldadılar.”“Hayatın, bir hastane odasının ufak küvezinde başladı.”", _mainText);
         }
         
         private void OnName2ButtonActivated()
         {
             NameButtonActivate(false);
-            _textManager.StartTyping("Döndü", _mainText);
+            _textManager.StartTyping("“Malatya’nın Hanımağa köyünde, çiftçi bir baba ve ev hanımı bir annenin üçüncü kız çocuğu olarak dünyaya geldin. “Bir daha kız evladın olmaz, Döndü koy, adettendir” dedi deden. Kulağına 3 kez fısıldadılar.”“Hayatın, bir köy evi odasında, ağlama sesleri ve hayal kırıklıkları ile başladı.”", _mainText);
         }
         
         private void OnName3ButtonActivated()
         {
             NameButtonActivate(false);
-            _textManager.StartTyping("Melike", _mainText);
+            _textManager.StartTyping("Diyarbakır Silvan’ın Akçayır köyünde, hayvancılıkla uğraşan bir baba ve ev hanımı bir annenin ilk kız çocuğu olarak dünyaya geldin. İsmini abin koydu. Kulağına 3 kez fısıldadılar.”“Hayatın, bir köy evinin odasında, abinin kucağında başladı.”", _mainText);
         }
         
         private void OnName4ButtonActivated()
         {
             NameButtonActivate(false);
-            _textManager.StartTyping("Özgür", _mainText);
+            _textManager.StartTyping("“Ankara’nın Çankaya ilçesinde, devlet memuru bir baba ve öğretmen bir annenin ilk kız çocuğu olarak dünyaya geldin. Annen ismini Özgür koymak istedi, özgür olsun, bahtı açık olsun dedi. Kulağına 3 kez fısıldadılar.”“Hayatın, bir hastane odasında, annenin kucağında başladı.”", _mainText);
         }
 
         private void NameButtonActivate(bool bl)
         {
             foreach (var button in _nameButtons)
             {
+                var text = button.GetComponentInChildren<TextMeshProUGUI>();
+                var color = text.color;
+                color.a = 1;
+                    
                 if (bl)
                 {               
-                    button.transform.DOScale(Vector3.one*0.4f, 4f);
+                    button.transform.DOScale(Vector3.one*0.4f, 2f).OnComplete(() =>
+                    {
+                        text.DOColor(color, 2f);
+                    });
                 }
                 else
                 {
-                    button.transform.DOScale(Vector3.zero, 1f);
-
+                    button.transform.DOScale(Vector3.zero, 2f);
                 }
             }
         }

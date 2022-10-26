@@ -23,7 +23,7 @@ namespace Game.Scripts
             foreach (char letter in sentence.ToCharArray())
             {
                 text.text += letter;
-                yield return new WaitForSeconds(.2f);
+                yield return new WaitForSeconds(.05f);
             }
         }
     }
