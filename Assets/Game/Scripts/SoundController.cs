@@ -7,7 +7,6 @@ namespace Game.Scripts
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private RightHandBehaviour _rightHandBehaviour;
 
-        [SerializeField] private AudioClip _generalSound;
         [SerializeField] private AudioClip _clip1;
         [SerializeField] private AudioClip _clip2;
         [SerializeField] private AudioClip _clip3;
@@ -21,10 +20,8 @@ namespace Game.Scripts
 
         private void OnStartButtonInteracted()
         {
-            _audioSource.clip = _generalSound;
-            _audioSource.Play();
+            _audioSource.Stop();
         }
-
         private void OnNameButtonInteracted(string name)
         {
             _audioSource.Stop();
