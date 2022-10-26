@@ -1,7 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 namespace Game.Scripts
 {
@@ -13,6 +15,9 @@ namespace Game.Scripts
         [SerializeField] private List<GameObject> _nameButtons;
         [SerializeField] private TextMeshProUGUI _startButtonText;
         [SerializeField] private TextMeshProUGUI _mainText;
+        [SerializeField] private GameObject _firstLight;
+        [SerializeField] private Light _secondLight;
+        
 
         private void Awake()
         {
@@ -22,6 +27,10 @@ namespace Game.Scripts
 
         private void OnStartButtonInteracted()
         {
+            _firstLight.gameObject.SetActive(false);
+            _secondLight.gameObject.SetActive(true);
+            SpotLightOpen();
+            
             _startButton.gameObject.SetActive(false);
             NameButtonActivate(true);
             _textManager.StartTyping("İsmin ne?",_mainText, 0.1f);
@@ -89,6 +98,25 @@ namespace Game.Scripts
                 NameButtonScale(bl);
             }
         }
+
+        private void SpotLightOpen()
+        {
+            StartCoroutine(SpotLigthOpenRoutine());
+        }
+
+        private IEnumerator SpotLigthOpenRoutine()
+        {
+            float _currentIntensityValue = 0;
+            _secondLight.intensity = _currentIntensityValue;
+
+            while (_currentIntensityValue <= 10)
+            {
+                _currentIntensityValue += Time.deltaTime/5f;
+                _secondLight.intensity = _currentIntensityValue;
+                yield return null;
+            }
+        }
+
 
         private void OnDestroy()
         {
