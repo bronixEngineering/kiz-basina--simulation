@@ -10,7 +10,7 @@ public class ModelBehaviour : MonoBehaviour
 {
 
     [SerializeField] private SkinnedMeshRenderer _modelMesh;
-    [SerializeField] private SkinnedMeshRenderer _firstHandMesh;
+    [SerializeField] private GameObject _firstHand;
 
     private void ModelScale()
     {
@@ -26,8 +26,7 @@ public class ModelBehaviour : MonoBehaviour
 
     public void StartButtonInteracted()
     {
-        _firstHandMesh.gameObject.SetActive(false);
-        _firstHandMesh.shadowCastingMode = ShadowCastingMode.Off;
+        _firstHand.gameObject.SetActive(false);
         ModelScale();
     }
 }
