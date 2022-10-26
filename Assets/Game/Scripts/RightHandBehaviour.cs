@@ -47,6 +47,12 @@ namespace Game.Scripts
             }
         }
 
+        private void OnTriggerExit(Collider other)
+        {
+            StopCoroutine(FillRoutine);
+            _selectionImage.SetActive(false);
+        }
+
         private void StartFillImageRoutine(string name, bool nameButton)
         {
             _selectionImage.SetActive(true);
