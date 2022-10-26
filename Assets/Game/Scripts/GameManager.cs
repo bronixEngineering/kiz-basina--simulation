@@ -9,6 +9,7 @@ namespace Game.Scripts
     {
         [SerializeField] private RightHandBehaviour _rightHand;
         [SerializeField] private ModelBehaviour _model;
+        [SerializeField] private TextManager _textManager;
         [SerializeField] private GameObject _startButton;
         [SerializeField] private List<GameObject> _nameButtons;
         [SerializeField] private TextMeshProUGUI _mainText;
@@ -33,25 +34,25 @@ namespace Game.Scripts
         private void OnName1ButtonActivated()
         {
             NameButtonActivate(false);
-            _mainText.text = "Sena";
+            _textManager.StartTyping("Sena", _mainText);
         }
         
         private void OnName2ButtonActivated()
         {
             NameButtonActivate(false);
-            _mainText.text = "Döndü?";
+            _textManager.StartTyping("Döndü", _mainText);
         }
         
         private void OnName3ButtonActivated()
         {
             NameButtonActivate(false);
-            _mainText.text = "Melike";
+            _textManager.StartTyping("Melike", _mainText);
         }
         
         private void OnName4ButtonActivated()
         {
             NameButtonActivate(false);
-            _mainText.text = "Özgür";
+            _textManager.StartTyping("Özgür", _mainText);
         }
 
         private void NameButtonActivate(bool bl)
