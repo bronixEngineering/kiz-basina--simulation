@@ -1,5 +1,8 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Net.Mime;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
@@ -16,6 +19,15 @@ namespace Game.Scripts
                 StopCoroutine(_textSequence);
             
             _textSequence = TypeSentence(sentence, text,duration);
+            StartCoroutine(_textSequence);
+        }
+        
+        public void StartTyping(List<string> sentences, TextMeshProUGUI text,float duration)
+        {
+            if(_textSequence != null)
+                StopCoroutine(_textSequence);
+            
+            _textSequence = TypeSentence(sentences, text,duration);
             StartCoroutine(_textSequence);
         }
 
@@ -35,6 +47,29 @@ namespace Game.Scripts
                 yield return new WaitForSeconds(1f);
                 TextCompleted?.Invoke();
             }
+        }
+
+        private IEnumerator TypeSentence(List<string> sentences, TextMeshProUGUI text, float duration)
+        {
+            for (int i = 0; i <= sentences.Count - 1; i++)
+            {
+                var color = text.color;
+                color.a = 0f;
+                text.color = color;
+
+                color.a = 1f;
+                text.text = sentences[i];
+                text.DOColor(color, duration / 2f);
+                
+                yield return new WaitForSeconds(duration);
+                
+                color.a = 0f;
+                text.DOColor(color, duration/2f);
+                
+                yield return new WaitForSeconds(duration/2f);
+            }
+            TextCompleted?.Invoke();
+
         }
     }
 }

@@ -42,21 +42,49 @@ namespace Game.Scripts
             NameButtonActivate(false);
             if (name == "Name1")
             {
-                _textManager.StartTyping("“Bursa’nın Nilüfer ilçesinde, icra memuru bir baba ve öğretmen bir annenin ilk kız çocuğu olarak dünyaya geldin. Annen ismin Selin olsun istedi, baban Sena olacak dedi. Kulağına 3 kez fısıldadılar.”“Hayatın, bir hastane odasının ufak küvezinde başladı.”", _mainText, 0.05f);
+                List<string> sentences = new List<string>();
+                sentences.Add("Bursa’nın Nilüfer ilçesinde, icra memuru bir baba ve öğretmen bir annenin ilk kız çocuğu olarak dünyaya geldin");
+                sentences.Add("Annen ismin Selin olsun istedi, baban Sena olacak dedi");
+                sentences.Add("Kulağına 3 kez fısıldadılar");
+                sentences.Add("Hayatın, bir hastane odasının ufak küvezinde başladı");
+    
+                _textManager.StartTyping(sentences, _mainText, 5f);
+                //_textManager.StartTyping("“Bursa’nın Nilüfer ilçesinde, icra memuru bir baba ve öğretmen bir annenin ilk kız çocuğu olarak dünyaya geldin. Annen ismin Selin olsun istedi, baban Sena olacak dedi. Kulağına 3 kez fısıldadılar.”“Hayatın, bir hastane odasının ufak küvezinde başladı.”", _mainText, 0.05f);
             }
             else if (name == "Name2")
             {
-                _textManager.StartTyping("“Malatya’nın Hanımağa köyünde, çiftçi bir baba ve ev hanımı bir annenin üçüncü kız çocuğu olarak dünyaya geldin. “Bir daha kız evladın olmaz, Döndü koy, adettendir” dedi deden. Kulağına 3 kez fısıldadılar.”“Hayatın, bir köy evi odasında, ağlama sesleri ve hayal kırıklıkları ile başladı.”", _mainText, 0.05f);
+                List<string> sentences = new List<string>();
+                sentences.Add("Malatya’nın Hanımağa köyünde, çiftçi bir baba ve ev hanımı bir annenin üçüncü kız çocuğu olarak dünyaya geldin");
+                sentences.Add("“Bir daha kız evladın olmaz, Döndü koy, adettendir” dedi deden");
+                sentences.Add("Kulağına 3 kez fısıldadılar");
+                sentences.Add("Hayatın, bir köy evi odasında, ağlama sesleri ve hayal kırıklıkları ile başladı");
+    
+                _textManager.StartTyping(sentences, _mainText, 5f);
+                //_textManager.StartTyping("“Malatya’nın Hanımağa köyünde, çiftçi bir baba ve ev hanımı bir annenin üçüncü kız çocuğu olarak dünyaya geldin. “Bir daha kız evladın olmaz, Döndü koy, adettendir” dedi deden. Kulağına 3 kez fısıldadılar.”“Hayatın, bir köy evi odasında, ağlama sesleri ve hayal kırıklıkları ile başladı.”", _mainText, 0.05f);
 
             }
             else if (name == "Name3")
             {
-                _textManager.StartTyping("Diyarbakır Silvan’ın Akçayır köyünde, hayvancılıkla uğraşan bir baba ve ev hanımı bir annenin ilk kız çocuğu olarak dünyaya geldin. İsmini abin koydu. Kulağına 3 kez fısıldadılar.”“Hayatın, bir köy evinin odasında, abinin kucağında başladı.”", _mainText, 0.05f);
+                List<string> sentences = new List<string>();
+                sentences.Add("Diyarbakır Silvan’ın Akçayır köyünde, hayvancılıkla uğraşan bir baba ve ev hanımı bir annenin ilk kız çocuğu olarak dünyaya geldin");
+                sentences.Add("İsmini abin koydu");
+                sentences.Add("Kulağına 3 kez fısıldadılar");
+                sentences.Add("Hayatın, bir köy evinin odasında, abinin kucağında başladı");
+    
+                _textManager.StartTyping(sentences, _mainText, 5f);
+                //_textManager.StartTyping("Diyarbakır Silvan’ın Akçayır köyünde, hayvancılıkla uğraşan bir baba ve ev hanımı bir annenin ilk kız çocuğu olarak dünyaya geldin. İsmini abin koydu. Kulağına 3 kez fısıldadılar.”“Hayatın, bir köy evinin odasında, abinin kucağında başladı.”", _mainText, 0.05f);
 
             }
             else if (name == "Name4")
             {
-                _textManager.StartTyping("“Ankara’nın Çankaya ilçesinde, devlet memuru bir baba ve öğretmen bir annenin ilk kız çocuğu olarak dünyaya geldin. Annen ismini Özgür koymak istedi, özgür olsun, bahtı açık olsun dedi. Kulağına 3 kez fısıldadılar.”“Hayatın, bir hastane odasında, annenin kucağında başladı.”", _mainText, 0.05f);
+                List<string> sentences = new List<string>();
+                sentences.Add("Ankara’nın Çankaya ilçesinde, devlet memuru bir baba ve öğretmen bir annenin ilk kız çocuğu olarak dünyaya geldin");
+                sentences.Add("Annen ismini Özgür koymak istedi, özgür olsun, bahtı açık olsun dedi");
+                sentences.Add("Kulağına 3 kez fısıldadılar");
+                sentences.Add("Hayatın, bir hastane odasında, annenin kucağında başladı");
+    
+                _textManager.StartTyping(sentences, _mainText, 5f);
+                //_textManager.StartTyping("“Ankara’nın Çankaya ilçesinde, devlet memuru bir baba ve öğretmen bir annenin ilk kız çocuğu olarak dünyaya geldin. Annen ismini Özgür koymak istedi, özgür olsun, bahtı açık olsun dedi. Kulağına 3 kez fısıldadılar.”“Hayatın, bir hastane odasında, annenin kucağında başladı.”", _mainText, 0.05f);
 
             }
         }
@@ -111,7 +139,7 @@ namespace Game.Scripts
 
             while (_currentIntensityValue <= 10)
             {
-                _currentIntensityValue += Time.deltaTime/5f;
+                _currentIntensityValue += Time.deltaTime/2f;
                 _secondLight.intensity = _currentIntensityValue;
                 yield return null;
             }
