@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using JetBrains.Annotations;
 using KinectScripts;
 
 public class CubemanController : MonoBehaviour 
@@ -23,13 +24,13 @@ public class CubemanController : MonoBehaviour
 	public GameObject Wrist_Right;
 	public GameObject Hand_Right;
 	public GameObject Hip_Left;
-	public GameObject Knee_Left;
-	public GameObject Ankle_Left;
-	public GameObject Foot_Left;
+	//public GameObject Knee_Left;
+	//public GameObject Ankle_Left;
+	//public GameObject Foot_Left;
 	public GameObject Hip_Right;
-	public GameObject Knee_Right;
-	public GameObject Ankle_Right;
-	public GameObject Foot_Right;
+	//public GameObject Knee_Right;
+	//public GameObject Ankle_Right;
+	//public GameObject Foot_Right;
 
 	public LineRenderer SkeletonLine;
 	
@@ -50,8 +51,8 @@ public class CubemanController : MonoBehaviour
 			Hip_Center, Spine, Shoulder_Center, Head,  // 0 - 3
 			Shoulder_Left, Elbow_Left, Wrist_Left, Hand_Left,  // 4 - 7
 			Shoulder_Right, Elbow_Right, Wrist_Right, Hand_Right,  // 8 - 11
-			Hip_Left, Knee_Left, Ankle_Left, Foot_Left,  // 12 - 15
-			Hip_Right, Knee_Right, Ankle_Right, Foot_Right  // 16 - 19
+			Hip_Left, //Knee_Left, Ankle_Left, Foot_Left,  // 12 - 15
+			Hip_Right, //Knee_Right, Ankle_Right, Foot_Right  // 16 - 19
 		};
 
 		parIdxs = new int[] {
