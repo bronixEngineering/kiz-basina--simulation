@@ -7,7 +7,7 @@ namespace Game.Scripts
     {
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private RightHandBehaviour _rightHandBehaviour;
-        [SerializeField] private RightHandBehaviour _leftHandBehaviour;
+        [SerializeField] private LeftHandBehaviour _leftHandBehaviour;
 
 
         [SerializeField] private AudioClip _clip1;
@@ -18,8 +18,8 @@ namespace Game.Scripts
         private void Start()
         {
             _rightHandBehaviour.StartButtonInteracted += OnStartButtonInteracted;
-            _leftHandBehaviour.StartButtonInteracted += OnStartButtonInteracted;
             _rightHandBehaviour.NameButtonInteracted += OnNameButtonInteracted;
+            _leftHandBehaviour.StartButtonInteracted += OnStartButtonInteracted;
         }
 
         private void OnStartButtonInteracted()

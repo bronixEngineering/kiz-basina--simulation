@@ -10,7 +10,7 @@ namespace Game.Scripts
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private RightHandBehaviour _rightHand;
-        [SerializeField] private RightHandBehaviour _leftHand;
+        [SerializeField] private LeftHandBehaviour _leftHand;
         [SerializeField] private TextManager _textManager;
         [SerializeField] private GameObject _startButton;
         [SerializeField] private List<GameObject> _nameButtons;
@@ -25,6 +25,7 @@ namespace Game.Scripts
             _rightHand.StartButtonInteracted += OnStartButtonInteracted;
             _leftHand.StartButtonInteracted += OnStartButtonInteracted;
             _rightHand.NameButtonInteracted += OnNameButtonActivated;
+            _leftHand.NameButtonInteracted += OnNameButtonActivated;
         }
 
         private void OnStartButtonInteracted()
@@ -153,6 +154,8 @@ namespace Game.Scripts
             _rightHand.StartButtonInteracted -= OnStartButtonInteracted;
             _rightHand.NameButtonInteracted -= OnNameButtonActivated;
             _leftHand.NameButtonInteracted -= OnNameButtonActivated;
+            _leftHand.StartButtonInteracted -= OnStartButtonInteracted;
+
 
         }
     }
