@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Game.Scripts
@@ -6,6 +7,8 @@ namespace Game.Scripts
     {
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private RightHandBehaviour _rightHandBehaviour;
+        [SerializeField] private RightHandBehaviour _leftHandBehaviour;
+
 
         [SerializeField] private AudioClip _clip1;
         [SerializeField] private AudioClip _clip2;
@@ -15,6 +18,7 @@ namespace Game.Scripts
         private void Start()
         {
             _rightHandBehaviour.StartButtonInteracted += OnStartButtonInteracted;
+            _leftHandBehaviour.StartButtonInteracted += OnStartButtonInteracted;
             _rightHandBehaviour.NameButtonInteracted += OnNameButtonInteracted;
         }
 
@@ -48,6 +52,12 @@ namespace Game.Scripts
             }
                 
         }
-        
+
+        private void OnDestroy()
+        {
+            _rightHandBehaviour.StartButtonInteracted -= OnStartButtonInteracted;
+            _leftHandBehaviour.StartButtonInteracted -= OnStartButtonInteracted;
+            _rightHandBehaviour.NameButtonInteracted -= OnNameButtonInteracted;
+        }
     }
 }

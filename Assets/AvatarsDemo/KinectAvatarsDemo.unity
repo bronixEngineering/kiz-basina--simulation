@@ -1450,6 +1450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 591290551}
   _rightHandBehaviour: {fileID: 527088253}
+  _leftHandBehaviour: {fileID: 1314413070}
   _clip1: {fileID: 8300000, guid: 887cdae83a73949ada2a3360959f95c9, type: 3}
   _clip2: {fileID: 8300000, guid: 386d97f2a445a4d11a6bbd89e3f259c6, type: 3}
   _clip3: {fileID: 8300000, guid: b59f026939cdc4206baae76a4ce31753, type: 3}
