@@ -259,8 +259,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5326a2bfb4339409297ec02d62a2e009, type: 2}
-  m_sharedMaterial: {fileID: -6666880398371720455, guid: 5326a2bfb4339409297ec02d62a2e009, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 62ad2638fc4fe48b3a2b56a5e2eb0569, type: 2}
+  m_sharedMaterial: {fileID: -7763248438550177239, guid: 62ad2638fc4fe48b3a2b56a5e2eb0569, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -550,8 +550,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Ba\u015Flamak i\xE7in Dokun"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5326a2bfb4339409297ec02d62a2e009, type: 2}
-  m_sharedMaterial: {fileID: -6666880398371720455, guid: 5326a2bfb4339409297ec02d62a2e009, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 62ad2638fc4fe48b3a2b56a5e2eb0569, type: 2}
+  m_sharedMaterial: {fileID: -7763248438550177239, guid: 62ad2638fc4fe48b3a2b56a5e2eb0569, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1111,7 +1111,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sena
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5326a2bfb4339409297ec02d62a2e009, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 62ad2638fc4fe48b3a2b56a5e2eb0569, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1246,7 +1246,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "D\xF6nd\xFC"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5326a2bfb4339409297ec02d62a2e009, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 62ad2638fc4fe48b3a2b56a5e2eb0569, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3183,7 +3183,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Melike
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5326a2bfb4339409297ec02d62a2e009, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 62ad2638fc4fe48b3a2b56a5e2eb0569, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4470,7 +4470,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\xD6zg\xFCr"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5326a2bfb4339409297ec02d62a2e009, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 62ad2638fc4fe48b3a2b56a5e2eb0569, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
