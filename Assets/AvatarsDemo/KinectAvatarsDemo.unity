@@ -2342,6 +2342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plane
       objectReference: {fileID: 0}
+    - target: {fileID: 5741055874753624107, guid: 40f1622086ed7432ab35d19ced2bb0ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5741055874753651723, guid: 40f1622086ed7432ab35d19ced2bb0ba, type: 3}
       propertyPath: m_RootOrder
       value: 5
