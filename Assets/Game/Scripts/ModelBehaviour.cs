@@ -15,7 +15,7 @@ public class ModelBehaviour : MonoBehaviour
     private void ModelScale()
     {
         _modelMesh.enabled = true;
-        _modelMesh.shadowCastingMode = ShadowCastingMode.ShadowsOnly;
+        _modelMesh.shadowCastingMode = ShadowCastingMode.Off;
     }
 
     
