@@ -140,7 +140,7 @@ namespace Game.Scripts
             float _currentIntensityValue = 0;
             _secondLight.intensity = _currentIntensityValue;
 
-            while (_currentIntensityValue <= 10)
+            while (_currentIntensityValue <= 2)
             {
                 _currentIntensityValue += Time.deltaTime/2f;
                 _secondLight.intensity = _currentIntensityValue;
