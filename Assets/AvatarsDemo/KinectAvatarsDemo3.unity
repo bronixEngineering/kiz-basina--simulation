@@ -7421,8 +7421,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _videoPlayer: {fileID: 695479287}
   _fatherVideoClip: {fileID: 32900000, guid: 80f94bb4531744cb5aae4ae3a4bd3563, type: 3}
-  _weddingVideoClip: {fileID: 32900000, guid: 36c324f7d3684485bbe554dca5f88988, type: 3}
-  _secondWeddingVideoClip: {fileID: 32900000, guid: f8486078f038445f39dface3840992a1, type: 3}
+  _weddingVideoClip: {fileID: 32900000, guid: 76bec3e859ef0479393b22e39e8766e9, type: 3}
+  _secondWeddingVideoClip: {fileID: 32900000, guid: ac6400a9cc84a440396061ae5ee2f5a6, type: 3}
 --- !u!114 &1629798855 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3838283153332022550, guid: 67db124e924d74538a10190febcef9a8, type: 3}
