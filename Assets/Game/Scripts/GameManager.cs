@@ -91,12 +91,12 @@ namespace Game.Scripts
 
         }
 
-        private void OnSecondDecisionButtonInteracted()
+        private void OnSecondDecisionButtonInteracted(string answer)
         {
             SecondDecisionButtonActivate(false, () =>
             {
                 ChangeStateTo(StateMachineBase.States.Stage6);
-            });
+            }, answer);
         }
 
         public void StartText(List<string> sentences, [CanBeNull] Action completeAction)
@@ -133,7 +133,7 @@ namespace Game.Scripts
                 completeAction?.Invoke();
             }
         }
-        public void SecondDecisionButtonActivate(bool bl, [CanBeNull] Action completeAction)
+        public void SecondDecisionButtonActivate(bool bl, [CanBeNull] Action completeAction, [CanBeNull] string answer)
         {
             foreach (var button in _secondDecisionButtons)
             {

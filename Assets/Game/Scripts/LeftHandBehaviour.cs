@@ -20,7 +20,7 @@ namespace Game.Scripts
         public event Action StartButtonInteracted;
         public event Action NameButtonInteracted;
         public event Action<string> DecisionButtonInteracted;
-        public event Action SecondDecisionButtonInteracted;
+        public event Action<string> SecondDecisionButtonInteracted;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -94,28 +94,16 @@ namespace Game.Scripts
             else if (decisionButton)
             {
                 _gameManager.DecisionButtonActivate(false, null, answer);
-                if (answer == "yes")
-                {
-                    DecisionButtonInteracted?.Invoke(answer);
-                }
-                else
-                {
-                    DecisionButtonInteracted?.Invoke(answer);
-                }
+                
+                DecisionButtonInteracted?.Invoke(answer);
+                
 
             }
             else if (secondDecisionButton)
             {
-                _gameManager.SecondDecisionButtonActivate(false, null);
-                if (answer == "yes")
-                {
-                    
-                }
-                else
-                {
-                    
-                }
-                SecondDecisionButtonInteracted?.Invoke();
+                _gameManager.SecondDecisionButtonActivate(false, null, answer);
+                SecondDecisionButtonInteracted?.Invoke(answer);
+
             }
             
             _selectionImage.SetActive(false);
