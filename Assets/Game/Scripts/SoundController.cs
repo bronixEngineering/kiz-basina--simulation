@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Game.Scripts
@@ -9,55 +11,67 @@ namespace Game.Scripts
         [SerializeField] private RightHandBehaviour _rightHandBehaviour;
         [SerializeField] private LeftHandBehaviour _leftHandBehaviour;
 
+        [SerializeField] private AudioClip _villlageSounds;
+        [SerializeField] private AudioClip _crowdedSounds;
+        [SerializeField] private AudioClip _weddingCrowdSounds;
+        [SerializeField] private AudioClip _yesOptionSounds;
+        [SerializeField] private AudioClip _noOptionSounds;
 
-        [SerializeField] private AudioClip _clip1;
-        [SerializeField] private AudioClip _clip2;
-        [SerializeField] private AudioClip _clip3;
-        [SerializeField] private AudioClip _clip4;
-
-        private void Start()
+        private IEnumerator _soundRoutine;
+        
+        public void PlayCrowdSoundWithDelay(int delay, [CanBeNull] Action completeAction)
         {
-            _rightHandBehaviour.StartButtonInteracted += OnStartButtonInteracted;
-            _rightHandBehaviour.NameButtonInteracted += OnNameButtonInteracted;
-            _leftHandBehaviour.StartButtonInteracted += OnStartButtonInteracted;
+            if (_soundRoutine != null)
+                StopCoroutine(_soundRoutine);
+
+            _soundRoutine = PlayCrowdSoundRoutine(delay, completeAction);
+            StartCoroutine(_soundRoutine);
+        }
+        private IEnumerator PlayCrowdSoundRoutine(int delay, [CanBeNull] Action completeAction)
+        {
+            yield return new WaitForSeconds(delay);
+            
+            _audioSource.Stop();
+            _audioSource.clip = _crowdedSounds;
+            _audioSource.Play();
+
+            yield return new WaitForSeconds(delay);
+            completeAction?.Invoke();
+
         }
 
-        private void OnStartButtonInteracted()
+        public void PlayCrowdSound()
+        {
+            _audioSource.clip = _crowdedSounds;
+            _audioSource.Play();
+        }
+
+        public void PlayVillageSound()
+        {
+            _audioSource.clip = _villlageSounds;
+            _audioSource.Play();
+        }
+        public void PlayYesSound()
+        {
+            _audioSource.clip = _yesOptionSounds;
+            _audioSource.Play();
+        }
+        public void PlayNoSound()
+        {
+            _audioSource.clip = _noOptionSounds;
+            _audioSource.Play();
+        }
+
+        public void PlayWeddingCrowdSound()
+        {
+            _audioSource.clip = _weddingCrowdSounds;
+            _audioSource.Play();
+        }
+
+        public void StopSound()
         {
             _audioSource.Stop();
         }
-        private void OnNameButtonInteracted(string name)
-        {
-            _audioSource.Stop();
-
-            if (name == "Name1")
-            {
-                _audioSource.clip = _clip1;
-                _audioSource.Play();
-            }
-            else if (name == "Name2")
-            {
-                _audioSource.clip = _clip2;
-                _audioSource.Play();
-            }
-            else if (name == "Name3")
-            {
-                _audioSource.clip = _clip3;
-                _audioSource.Play();
-            }
-            else if (name == "Name4")
-            {
-                _audioSource.clip = _clip4;
-                _audioSource.Play();
-            }
-                
-        }
-
-        private void OnDestroy()
-        {
-            _rightHandBehaviour.StartButtonInteracted -= OnStartButtonInteracted;
-            _leftHandBehaviour.StartButtonInteracted -= OnStartButtonInteracted;
-            _rightHandBehaviour.NameButtonInteracted -= OnNameButtonInteracted;
-        }
+        
     }
 }
