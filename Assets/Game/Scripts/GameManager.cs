@@ -92,11 +92,9 @@ namespace Game.Scripts
         }
 
         private void OnSecondDecisionButtonInteracted(string answer)
-        {
-            SecondDecisionButtonActivate(false, () =>
-            {
-                ChangeStateTo(StateMachineBase.States.Stage6);
-            }, answer);
+        { 
+            SecondDecisionButtonActivate(false, null, answer);
+            ChangeStateTo(StateMachineBase.States.Stage6);
         }
 
         public void StartText(List<string> sentences, [CanBeNull] Action completeAction)

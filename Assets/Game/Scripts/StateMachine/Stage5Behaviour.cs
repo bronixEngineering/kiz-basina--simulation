@@ -56,6 +56,7 @@ namespace Game.Scripts.StateMachine
         public override void OnExit(Action doOnExit = null)
         {
             base.OnExit(null);
+           
         }
         
     }

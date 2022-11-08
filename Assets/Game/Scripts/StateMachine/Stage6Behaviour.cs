@@ -14,44 +14,11 @@ namespace Game.Scripts.StateMachine
         {
             base.OnEnter(null);
             List<string> sentences = new List<string>();
+
             sentences.Add("Bu hayatı değiştirmek istiyor musun");
             GameManager.StartText(sentences, null);
-            GameManager.SecondDecisionButtonActivate(false, () =>
-            {
-                if (answer == "yes")
-                {
-                    List<string> sentences = new List<string>();
-                    sentences.Add("Yanlış. Doğduğun günden beri sana ait olmayan bir hayatı, nasıl sahiplenip değiştirebilirsin?");
-                    GameManager.StartText(sentences, null);
-                }
-                else
-                {
-                    List<string> sentences = new List<string>();
-                    sentences.Add("Bir söz hakkın olmadığını hala öğrenemedin mi?");
-                    GameManager.StartText(sentences, null);
-                }
-            }, answer);
+            GameManager.SecondDecisionButtonActivate(true, null, null);
             
-            
-            /*var sequence = DOTween.Sequence();
-            sequence.InsertCallback(5f,() =>
-            {
-                if (answer == "yes")
-                {
-                    List<string> sentences = new List<string>();
-                    sentences.Add("Yanlış. Doğduğun günden beri sana ait olmayan bir hayatı, nasıl sahiplenip değiştirebilirsin?");
-                    GameManager.StartText(sentences, null);
-                }
-                else
-                {
-                    List<string> sentences = new List<string>();
-                    sentences.Add("Bir söz hakkın olmadığını hala öğrenemedin mi?");
-                    GameManager.StartText(sentences, null);
-                }
-            });*/
-            
-            
-            //sequence.Play();
         }
 
         public override void OnExit(Action doOnExit = null)

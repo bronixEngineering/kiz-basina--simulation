@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
@@ -103,6 +104,17 @@ namespace Game.Scripts
             {
                 _gameManager.SecondDecisionButtonActivate(false, null, answer);
                 SecondDecisionButtonInteracted?.Invoke(answer);
+                
+                if (answer == "yes")
+                {
+                    List<string> sentences = new List<string>();
+                    sentences.Add("Yanlış. Doğduğun günden beri sana ait olmayan bir hayatı, nasıl sahiplenip değiştirebilirsin?");
+                    _gameManager.StartText(sentences, null);                }
+                else
+                {
+                    List<string> sentences = new List<string>();
+                    sentences.Add("Bir söz hakkın olmadığını hala öğrenemedin mi?");
+                    _gameManager.StartText(sentences, null);                }
 
             }
             
