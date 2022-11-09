@@ -579,7 +579,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6776d1b986894a699f72994ba363693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _modelMesh: {fileID: 1720995266}
+  _modelMeshes:
+  - {fileID: 1720995266}
+  - {fileID: 1917315517}
+  - {fileID: 1175624614}
   _firstHand: {fileID: 1317644452}
 --- !u!1 &297043252
 GameObject:
@@ -1918,6 +1921,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3887185075125053422, guid: 84095ef8e71cd4125ae1e2a510dccc96, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 84095ef8e71cd4125ae1e2a510dccc96, type: 3}
       propertyPath: m_DirtyAABB
       value: 0
       objectReference: {fileID: 0}
@@ -1956,6 +1963,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 84095ef8e71cd4125ae1e2a510dccc96, type: 3}
       propertyPath: m_Name
       value: skirt
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84095ef8e71cd4125ae1e2a510dccc96, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84095ef8e71cd4125ae1e2a510dccc96, type: 3}
@@ -2110,6 +2121,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a83d0e9282bdce145ba0d93875c69269, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3208799829246024977, guid: a83d0e9282bdce145ba0d93875c69269, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3208799829246024977, guid: a83d0e9282bdce145ba0d93875c69269, type: 3}
@@ -6459,6 +6474,11 @@ Cloth:
   - {x: 0.6666667, y: 0.16666667, z: 0.16666667}
   - {x: 0.5, y: 0.5, z: 0}
   m_VirtualParticleIndices: 
+--- !u!137 &1175624614 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3208799829246024977, guid: a83d0e9282bdce145ba0d93875c69269, type: 3}
+  m_PrefabInstance: {fileID: 693569440}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1219536873 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8226474057645319118, guid: 67db124e924d74538a10190febcef9a8, type: 3}
@@ -7160,6 +7180,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: ae23d50304c93b9418b65cec8f9fe954, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: ae23d50304c93b9418b65cec8f9fe954, type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -7770,6 +7794,14 @@ PrefabInstance:
     - target: {fileID: 1554559675887401996, guid: 67db124e924d74538a10190febcef9a8, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554559675887401996, guid: 67db124e924d74538a10190febcef9a8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554559675887401996, guid: 67db124e924d74538a10190febcef9a8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3838283153474062662, guid: 67db124e924d74538a10190febcef9a8, type: 3}
       propertyPath: m_IsActive
@@ -8899,6 +8931,11 @@ Cloth:
   - {x: 0.6666667, y: 0.16666667, z: 0.16666667}
   - {x: 0.5, y: 0.5, z: 0}
   m_VirtualParticleIndices: 
+--- !u!137 &1917315517 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3887185075125053422, guid: 84095ef8e71cd4125ae1e2a510dccc96, type: 3}
+  m_PrefabInstance: {fileID: 595215097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1955633938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: ae23d50304c93b9418b65cec8f9fe954, type: 3}
