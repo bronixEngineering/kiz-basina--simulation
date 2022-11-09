@@ -15,8 +15,13 @@ namespace Game.Scripts.StateMachine
             base.OnEnter(null);
             List<string> sentences = new List<string>();
 
-            sentences.Add("Bu deneyim, Türkiye’de kadınların maruz bırakıldığı eşitsizlik ve şiddet gerçeği konusunda farkındalık yaratmak ve empati seviyesini yükseltmek amacıyla UNFPA işbirliği ile gerçekleştirilmiştir. Katılımınız için teşekkür ederiz.   Deneyime katkılarından dolayı Ankara Büyükşehir Belediyesi’ne, Bronix Engineering Solutions’a, Ömer Faruk Önder'e, Resul Ercan'a ve Ankara Aks’a çok teşekkür ederiz.");
-            GameManager.StartText(sentences, 15f,null);
+            sentences.Add(
+                "Bu deneyim, Türkiye’de kadınların maruz bırakıldığı eşitsizlik ve şiddet gerçeği konusunda farkındalık yaratmak");
+            sentences.Add("ve empati seviyesini yükseltmek amacıyla UNFPA işbirliği ile gerçekleştirilmiştir.");
+            sentences.Add("Katılımınız için teşekkür ederiz.");
+            sentences.Add("Deneyime katkılarından dolayı Ankara Büyükşehir Belediyesi’ne, Bronix Engineering Solutions’a, Ömer Faruk Önder'e, Resul Ercan'a ve Ankara Aks’a çok teşekkür ederiz.");
+
+            GameManager.StartText(sentences, 7f,null);
         }
 
         public override void OnExit(Action doOnExit = null)
