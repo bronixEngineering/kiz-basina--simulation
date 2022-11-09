@@ -40,6 +40,8 @@ namespace Game.Scripts
             _leftHand.DecisionButtonInteracted += OnDecisionButtonInteracted;
             _rightHand.SecondDecisionButtonInteracted += OnSecondDecisionButtonInteracted;
             _leftHand.SecondDecisionButtonInteracted += OnSecondDecisionButtonInteracted;
+            
+
         }
 
         private void Start()
@@ -54,13 +56,17 @@ namespace Game.Scripts
                 {StateMachineBase.States.Stage4, new Stage4Behaviour(this, _soundController, _videoController)},
                 {StateMachineBase.States.Stage5, new Stage5Behaviour(this, _soundController, _videoController)},
                 {StateMachineBase.States.Stage6, new Stage6Behaviour(this, _soundController, _videoController)},
+                {StateMachineBase.States.Stage7, new Stage7Behaviour(this, _soundController, _videoController)},
+
             };
             
-            ChangeStateTo(StateMachineBase.States.Default);
+            CurrentState = States[StateMachineBase.States.Default];
+
+            ChangeStateTo(StateMachineBase.States.Default, null);
         
         }
 
-        public void ChangeStateTo(StateMachineBase.States requestedState)
+        public void ChangeStateTo(StateMachineBase.States requestedState, [CanBeNull] string answer)
         {
             CurrentState?.OnExit();
             var nextState = CurrentState is null ? StateMachineBase.States.Default : requestedState;
@@ -70,9 +76,10 @@ namespace Game.Scripts
 
         private void OnStartButtonInteracted()
         {
-            ChangeStateTo(StateMachineBase.States.Default);
+            ChangeStateTo(StateMachineBase.States.Default, null);
             _firstLight.gameObject.SetActive(false);
             _secondLight.gameObject.SetActive(true);
+            SpotLightOpen(1);
             _startButton.gameObject.SetActive(false);
             NameButtonActivate(true);
             _textManager.StartTyping("İsmin ne?",_mainText, 0.1f);
@@ -81,25 +88,25 @@ namespace Game.Scripts
         private void OnNameButtonActivated()
         {
             NameButtonActivate(false);
-            ChangeStateTo(StateMachineBase.States.Stage1);
+            ChangeStateTo(StateMachineBase.States.Stage1, null);
         }
 
         public void OnDecisionButtonInteracted(string answer)
         {
             
-            ChangeStateTo(StateMachineBase.States.Stage4);
+            ChangeStateTo(StateMachineBase.States.Stage4, answer);
 
         }
 
         private void OnSecondDecisionButtonInteracted(string answer)
         { 
             SecondDecisionButtonActivate(false, null, answer);
-            ChangeStateTo(StateMachineBase.States.Stage6);
+            ChangeStateTo(StateMachineBase.States.Stage7, answer);
         }
 
-        public void StartText(List<string> sentences, [CanBeNull] Action completeAction)
+        public void StartText(List<string> sentences, float duration,[CanBeNull] Action completeAction)
         {
-            _textManager.StartTyping(sentences, _mainText, 3.5f, completeAction);
+            _textManager.StartTyping(sentences, _mainText, duration, completeAction);
         }
 
         private void NameButtonActivate(bool bl)
@@ -144,33 +151,22 @@ namespace Game.Scripts
             }
         }
 
-        public void SpotLightOpen(bool open)
+        public void SpotLightOpen(float value)
         {
-            StartCoroutine(SpotLightOpenRoutine(open));
+            StartCoroutine(SpotLightOpenRoutine(value));
         }
 
-        private IEnumerator SpotLightOpenRoutine(bool open)
+        private IEnumerator SpotLightOpenRoutine(float value)
         {
-            if (open)
-            {
-                float _currentIntensityValue = 0;
-                _secondLight.intensity = _currentIntensityValue;
+            float _currentIntensityValue = 0;
+            _secondLight.intensity = _currentIntensityValue;
 
                 while (_currentIntensityValue <= 2)
                 {
-                    _currentIntensityValue += Time.deltaTime;
+                    _currentIntensityValue += Time.deltaTime/value;
                     _secondLight.intensity = _currentIntensityValue;
                     yield return null;
                 }
-            }
-            else
-            {
-                while (_secondLight.intensity >= 0)
-                {
-                    _secondLight.intensity -= Time.deltaTime;
-                    yield return null;
-                }
-            }
         }
 
 

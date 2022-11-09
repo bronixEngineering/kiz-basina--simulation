@@ -21,9 +21,9 @@ namespace Game.Scripts.StateMachine
             sentences.Add("Kulağına 3 kez fısıldadılar");
             sentences.Add("Hayatın, bir köy evi odasında, ağlama sesleri ve hayal kırıklıkları ile başladı");
             
-            GameManager.StartText(sentences, () =>
+            GameManager.StartText(sentences,3.5f ,() =>
             {
-                GameManager.ChangeStateTo(States.Stage2);
+                GameManager.ChangeStateTo(States.Stage2, null);
             });
         }
 

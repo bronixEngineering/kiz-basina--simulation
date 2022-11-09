@@ -16,9 +16,8 @@ namespace Game.Scripts.StateMachine
             List<string> sentences = new List<string>();
 
             sentences.Add("Bu hayatı değiştirmek istiyor musun");
-            GameManager.StartText(sentences, null);
+            GameManager.StartText(sentences, 5f,null);
             GameManager.SecondDecisionButtonActivate(true, null, null);
-            
         }
 
         public override void OnExit(Action doOnExit = null)

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.Scripts.StateMachine;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,7 @@ namespace Game.Scripts
         [SerializeField] private GameObject _selectionImage; 
         [SerializeField] private Image _fillImage;
         [SerializeField] private GameManager _gameManager;
+        [SerializeField] private SoundController _soundController;
 
         private IEnumerator FillRoutine;
         private float _selectionTime = 6f;
@@ -98,6 +100,14 @@ namespace Game.Scripts
                 
                 DecisionButtonInteracted?.Invoke(answer);
                 
+                if (answer == "yes")
+                {
+                    _soundController.PlayYesSound();
+                }
+                else if(answer == "no")
+                {
+                    _soundController.PlayNoSound();
+                }
 
             }
             else if (secondDecisionButton)
@@ -109,18 +119,19 @@ namespace Game.Scripts
                 {
                     List<string> sentences = new List<string>();
                     sentences.Add("Yanlış. Doğduğun günden beri sana ait olmayan bir hayatı, nasıl sahiplenip değiştirebilirsin?");
-                    _gameManager.StartText(sentences, null);
-                    _gameManager.SecondDecisionButtonActivate(false, null, answer);
-
+                    _gameManager.StartText(sentences, 6f, () =>
+                    {
+                        _gameManager.ChangeStateTo(StateMachineBase.States.Stage7,null);
+                    });
                 }
                 else
                 {
                     List<string> sentences = new List<string>();
                     sentences.Add("Bir söz hakkın olmadığını hala öğrenemedin mi?");
-                    _gameManager.StartText(sentences, null);
-                    _gameManager.SecondDecisionButtonActivate(false, null, answer);
-
-                }
+                    _gameManager.StartText(sentences, 6f, () =>
+                    {
+                        _gameManager.ChangeStateTo(StateMachineBase.States.Stage7,null);
+                    });                }
 
             }
             

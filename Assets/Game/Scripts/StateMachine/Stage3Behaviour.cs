@@ -15,7 +15,7 @@ namespace Game.Scripts.StateMachine
             List<string> sentences = new List<string>();
 
             sentences.Add("Evliliğe hazır mıyım?");
-            GameManager.StartText(sentences, null);
+            GameManager.StartText(sentences, 3.5f,null);
             GameManager.DecisionButtonActivate(true, null, null);
         }
 

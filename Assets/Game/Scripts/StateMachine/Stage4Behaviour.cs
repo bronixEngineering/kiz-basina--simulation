@@ -18,20 +18,9 @@ namespace Game.Scripts.StateMachine
             base.OnEnter(null);
             GameManager.DecisionButtonActivate(false, null, answer);
             var sequence = DOTween.Sequence();
-            sequence.InsertCallback(.2f,() =>
-            {
-                if (answer == "yes")
-                {
-                    SoundController.PlayYesSound();
-                }
-                else
-                {
-                    SoundController.PlayNoSound();
-                }
-            });
             sequence.InsertCallback(15f,() =>
             {
-                GameManager.ChangeStateTo(States.Stage5);
+                GameManager.ChangeStateTo(States.Stage5, null);
             });
             
             sequence.Play();

@@ -19,7 +19,8 @@ namespace Game.Scripts.StateMachine
             Stage3,
             Stage4,
             Stage5,
-            Stage6
+            Stage6,
+            Stage7
         }
         
         protected StateMachineBase(GameManager gameManager, SoundController soundController, VideoController videoController)
@@ -31,15 +32,12 @@ namespace Game.Scripts.StateMachine
         
         public virtual void OnEnter(Action doOnEnter = null, string answer = null)
         {
-            GameManager.SpotLightOpen(true);
         }
 
         public virtual void OnExit(Action doOnExit = null)
         {
-            GameManager.SpotLightOpen(false);
             VideoController.StopVideo();
             SoundController.StopSound();
-
         }
     }
 }

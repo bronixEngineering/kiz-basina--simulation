@@ -31,7 +31,7 @@ namespace Game.Scripts.StateMachine
             });
             sequence.InsertCallback(37f,() =>
             {
-                GameManager.ChangeStateTo(States.Stage3);
+                GameManager.ChangeStateTo(States.Stage3, null);
             });
             
             sequence.Play();
