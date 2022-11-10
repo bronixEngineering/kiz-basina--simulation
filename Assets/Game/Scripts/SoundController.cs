@@ -16,6 +16,7 @@ namespace Game.Scripts
         [SerializeField] private AudioClip _weddingCrowdSounds;
         [SerializeField] private AudioClip _yesOptionSounds;
         [SerializeField] private AudioClip _noOptionSounds;
+        [SerializeField] private AudioClip _pianoSound;
 
         private IEnumerator _soundRoutine;
         
@@ -43,6 +44,11 @@ namespace Game.Scripts
         public void PlayCrowdSound()
         {
             _audioSource.clip = _crowdedSounds;
+            _audioSource.Play();
+        }
+        public void PlayPianoSound()
+        {
+            _audioSource.clip = _pianoSound;
             _audioSource.Play();
         }
 

@@ -32,14 +32,11 @@ namespace Game.Scripts.StateMachine
                 sentences.Add("Hareket etme");
                 GameManager.StartText(sentences, 3.5f,null);
             });
-            sequence.InsertCallback(.6f,() =>
-            {
+            sequence.InsertCallback(3f,() =>
+            { 
                 SoundController.PlayWeddingCrowdSound();
             });
-            sequence.InsertCallback(10f,() =>
-            {
-                VideoController.PlaySecondWeddingVideoClip();
-            });
+         
             sequence.InsertCallback(10f,() =>
             {
                 List<string> sentences = new List<string>();
@@ -48,7 +45,7 @@ namespace Game.Scripts.StateMachine
                 sentences.Add("Gülümse, memnuniyetsiz bir gelini kimse sevmez.");
                 sentences.Add("Seni daha çok üzerler.");
 
-                GameManager.StartText(sentences, 3.5f,() =>
+                GameManager.StartText(sentences, 7f,() =>
                 {
                     GameManager.ChangeStateTo(States.Stage6, null);
                 });

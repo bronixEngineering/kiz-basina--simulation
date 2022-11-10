@@ -20,16 +20,16 @@ namespace Game.Scripts.StateMachine
             {
                 SoundController.PlayCrowdSound();
             });
-            sequence.InsertCallback(5f,() =>
+            sequence.InsertCallback(30f,() =>
             {
                 VideoController.PlayFatherVideoClip();
             });
-            sequence.InsertCallback(36f,() =>
+            sequence.InsertCallback(46f,() =>
             {
                 VideoController.PauseVideo();                
 
             });
-            sequence.InsertCallback(37f,() =>
+            sequence.InsertCallback(48f,() =>
             {
                 GameManager.ChangeStateTo(States.Stage3, null);
             });

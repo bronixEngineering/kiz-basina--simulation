@@ -12,7 +12,8 @@ namespace Game.Scripts.StateMachine
         public override void OnEnter(Action doOnEnter = null, string answer = null)
         {
             base.OnEnter(null);
-            
+            //piano müzik girecek
+
             List<string> sentences = new List<string>();
             
             sentences.Add("Yanlış. İsmini ve kaderini seçebileceğini sana kim düşündürdü?");
