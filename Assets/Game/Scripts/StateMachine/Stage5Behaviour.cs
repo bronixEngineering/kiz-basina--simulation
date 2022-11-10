@@ -17,6 +17,10 @@ namespace Game.Scripts.StateMachine
             base.OnEnter(null);
             var sequence = DOTween.Sequence();
             GameManager.SpotLightOpen(3);
+            sequence.InsertCallback(.1f,() =>
+            {
+                GameManager.ChangeHeadModel();
+            });
             sequence.InsertCallback(.5f,() =>
             {
                 VideoController.PlayWeddingVideoClip();

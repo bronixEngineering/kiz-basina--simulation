@@ -14,6 +14,7 @@ namespace Game.Scripts
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private SoundController _soundController;
+        [SerializeField] private ModelBehaviour _modelBehaviour;
         [SerializeField] private VideoController _videoController;
         [SerializeField] private RightHandBehaviour _rightHand;
         [SerializeField] private LeftHandBehaviour _leftHand;
@@ -96,6 +97,11 @@ namespace Game.Scripts
             
             ChangeStateTo(StateMachineBase.States.Stage4, answer);
 
+        }
+
+        public void ChangeHeadModel()
+        {
+            _modelBehaviour.HeadModelChange();
         }
 
         private void OnSecondDecisionButtonInteracted(string answer)

@@ -9,6 +9,8 @@ namespace Game.Scripts
 
         [SerializeField] private List<SkinnedMeshRenderer> _modelMeshes;
         [SerializeField] private GameObject _firstHand;
+        [SerializeField] private GameObject _firstHeadModel;
+        [SerializeField] private GameObject _secondHeadModel;
 
         private void ModelScale()
         {
@@ -24,6 +26,12 @@ namespace Game.Scripts
         {
             _firstHand.gameObject.SetActive(false);
             ModelScale();
+        }
+
+        public void HeadModelChange()
+        {
+            _firstHeadModel.SetActive(false);
+            _secondHeadModel.SetActive(true);
         }
     }
 }
