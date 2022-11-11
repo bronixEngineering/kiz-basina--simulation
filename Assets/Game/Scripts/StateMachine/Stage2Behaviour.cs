@@ -12,25 +12,24 @@ namespace Game.Scripts.StateMachine
         public override void OnEnter(Action doOnEnter = null, string answer = null)
         {
             base.OnEnter(null);
+            VideoController.StopVideo();
             SoundController.PlayVillageSound();
             
 
             var sequence = DOTween.Sequence();
-            sequence.InsertCallback(2f,() =>
-            {
-                SoundController.PlayCrowdSound();
-            });
-            sequence.InsertCallback(5f,() =>
+          
+            sequence.InsertCallback(40f,() =>
             {
                 VideoController.PlayFatherVideoClip();
             });
-            sequence.InsertCallback(36f,() =>
+            sequence.InsertCallback(75f,() =>
             {
                 VideoController.PauseVideo();                
 
             });
-            sequence.InsertCallback(37f,() =>
+            sequence.InsertCallback(77.2f,() =>
             {
+
                 GameManager.ChangeStateTo(States.Stage3, null);
             });
             
@@ -39,6 +38,7 @@ namespace Game.Scripts.StateMachine
 
         public override void OnExit(Action doOnExit = null)
         {
+            VideoController.StopVideo();
             base.OnExit(null);
         }
     }

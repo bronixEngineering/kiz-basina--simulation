@@ -14,7 +14,7 @@ namespace Game.Scripts.StateMachine
         {
             base.OnEnter(null);
             List<string> sentences = new List<string>();
-
+            SoundController.PlayPianoFinish();
             sentences.Add("Bu hayatı değiştirmek istiyor musun");
             GameManager.StartText(sentences, 5f,null);
             GameManager.SecondDecisionButtonActivate(true, null, null);

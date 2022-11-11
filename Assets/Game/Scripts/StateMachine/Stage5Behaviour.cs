@@ -16,12 +16,12 @@ namespace Game.Scripts.StateMachine
         {
             base.OnEnter(null);
             var sequence = DOTween.Sequence();
-            GameManager.SpotLightOpen(3);
+            GameManager.SpotLightOpen(6);
             sequence.InsertCallback(.1f,() =>
             {
                 GameManager.ChangeHeadModel();
             });
-            sequence.InsertCallback(.5f,() =>
+            sequence.InsertCallback(2.5f,() =>
             {
                 VideoController.PlayWeddingVideoClip();
 
@@ -32,15 +32,12 @@ namespace Game.Scripts.StateMachine
                 sentences.Add("Hareket etme");
                 GameManager.StartText(sentences, 3.5f,null);
             });
-            sequence.InsertCallback(.6f,() =>
+            sequence.InsertCallback(2.6f,() =>
             {
                 SoundController.PlayWeddingCrowdSound();
             });
-            sequence.InsertCallback(10f,() =>
-            {
-                VideoController.PlaySecondWeddingVideoClip();
-            });
-            sequence.InsertCallback(10f,() =>
+          
+            sequence.InsertCallback(12f,() =>
             {
                 List<string> sentences = new List<string>();
                 sentences.Add("Hareket etme");
@@ -48,18 +45,27 @@ namespace Game.Scripts.StateMachine
                 sentences.Add("Gülümse, memnuniyetsiz bir gelini kimse sevmez.");
                 sentences.Add("Seni daha çok üzerler.");
 
-                GameManager.StartText(sentences, 3.5f,() =>
-                {
-                    GameManager.ChangeStateTo(States.Stage6, null);
-                });
+                GameManager.StartText(sentences, 3.5f,null);
 
             });
+           
+            sequence.InsertCallback(51.7f, () =>
+            {
 
+                GameManager.ChangeStateTo(States.Stage6, null);
+            });
+
+
+
+
+
+           
             sequence.Play();
         }
 
         public override void OnExit(Action doOnExit = null)
         {
+            VideoController.StopVideo(); 
             base.OnExit(null);
            
         }

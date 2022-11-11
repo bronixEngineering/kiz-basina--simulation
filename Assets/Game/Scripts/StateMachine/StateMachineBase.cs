@@ -36,8 +36,8 @@ namespace Game.Scripts.StateMachine
 
         public virtual void OnExit(Action doOnExit = null)
         {
-            VideoController.StopVideo();
-            SoundController.StopSound();
+          //  VideoController.StopVideo();
+          //  SoundController.StopSound();
         }
     }
 }

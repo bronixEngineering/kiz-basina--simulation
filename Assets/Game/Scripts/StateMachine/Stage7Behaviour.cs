@@ -16,8 +16,8 @@ namespace Game.Scripts.StateMachine
             List<string> sentences = new List<string>();
 
             sentences.Add(
-                "Bu deneyim, Türkiye’de kadınların maruz bırakıldığı eşitsizlik ve şiddet gerçeği konusunda farkındalık yaratmak");
-            sentences.Add("ve empati seviyesini yükseltmek amacıyla UNFPA işbirliği ile gerçekleştirilmiştir.");
+                "Bu deneyim, Türkiye’de kadınların maruz bırakıldığı eşitsizlik ve şiddet gerçeği konusunda farkındalık yaratmak ve empati seviyesini yükseltmek amacıyla UNFPA işbirliği ile gerçekleştirilmiştir.");
+          
             sentences.Add("Katılımınız için teşekkür ederiz.");
             sentences.Add("Deneyime katkılarından dolayı Ankara Büyükşehir Belediyesi’ne, Bronix Engineering Solutions’a, Ömer Faruk Önder'e, Resul Ercan'a ve Ankara Aks’a çok teşekkür ederiz.");
 

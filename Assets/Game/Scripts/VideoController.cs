@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -23,6 +24,7 @@ namespace Game.Scripts
         {
             
             _videoPlayer.clip = _weddingVideoClip;
+           
             _videoPlayer.Play();
             
         }

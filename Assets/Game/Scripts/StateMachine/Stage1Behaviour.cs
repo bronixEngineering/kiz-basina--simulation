@@ -12,7 +12,7 @@ namespace Game.Scripts.StateMachine
         public override void OnEnter(Action doOnEnter = null, string answer = null)
         {
             base.OnEnter(null);
-            
+            SoundController.PlayCrowdSound();
             List<string> sentences = new List<string>();
             
             sentences.Add("Yanlış. İsmini ve kaderini seçebileceğini sana kim düşündürdü?");
@@ -29,6 +29,7 @@ namespace Game.Scripts.StateMachine
 
         public override void OnExit(Action doOnExit = null)
         {
+            
             base.OnExit(null);
         }
     }
