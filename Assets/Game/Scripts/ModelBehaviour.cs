@@ -30,8 +30,9 @@ namespace Game.Scripts
 
         public void HeadModelChange()
         {
-            _firstHeadModel.SetActive(false);
             _secondHeadModel.SetActive(true);
+            _firstHeadModel.SetActive(false);
+            
         }
     }
 }

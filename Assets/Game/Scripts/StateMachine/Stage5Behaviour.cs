@@ -17,11 +17,11 @@ namespace Game.Scripts.StateMachine
             base.OnEnter(null);
             var sequence = DOTween.Sequence();
             GameManager.SpotLightOpen(6);
-            sequence.InsertCallback(.1f,() =>
+            sequence.InsertCallback(.3f,() =>
             {
                 GameManager.ChangeHeadModel();
             });
-            sequence.InsertCallback(2.5f,() =>
+            sequence.InsertCallback(.5f,() =>
             {
                 VideoController.PlayWeddingVideoClip();
 
@@ -32,7 +32,7 @@ namespace Game.Scripts.StateMachine
                 sentences.Add("Hareket etme");
                 GameManager.StartText(sentences, 3.5f,null);
             });
-            sequence.InsertCallback(2.6f,() =>
+            sequence.InsertCallback(.6f,() =>
             {
                 SoundController.PlayWeddingCrowdSound();
             });
@@ -40,7 +40,7 @@ namespace Game.Scripts.StateMachine
             sequence.InsertCallback(12f,() =>
             {
                 List<string> sentences = new List<string>();
-                sentences.Add("Hareket etme");
+               
                 sentences.Add("Cevap verme");
                 sentences.Add("Gülümse, memnuniyetsiz bir gelini kimse sevmez.");
                 sentences.Add("Seni daha çok üzerler.");
@@ -49,7 +49,7 @@ namespace Game.Scripts.StateMachine
 
             });
            
-            sequence.InsertCallback(51.7f, () =>
+            sequence.InsertCallback(51.8f, () =>
             {
 
                 GameManager.ChangeStateTo(States.Stage6, null);
