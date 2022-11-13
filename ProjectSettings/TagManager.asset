@@ -9,6 +9,11 @@ TagManager:
   - Name2
   - Name3
   - Name4
+  - Name
+  - Yes
+  - No
+  - Yess
+  - Noo
   layers:
   - Default
   - TransparentFX
